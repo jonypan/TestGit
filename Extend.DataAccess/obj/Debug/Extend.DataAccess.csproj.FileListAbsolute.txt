@@ -11,3 +11,16 @@ H:\Workspace\VS\Hanvet\Extend.DataAccess\obj\Debug\Extend.DataAccess.csprojResol
 H:\Workspace\VS\Hanvet\Extend.DataAccess\obj\Debug\Extend.DataAccess.csproj.CoreCompileInputs.cache
 H:\Workspace\VS\Hanvet\Extend.DataAccess\obj\Debug\Extend.DataAccess.dll
 H:\Workspace\VS\Hanvet\Extend.DataAccess\obj\Debug\Extend.DataAccess.pdb
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Chat\Data\badwords.txt
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Extend.DataAccess.dll
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Extend.DataAccess.pdb
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Extend.Utilities.dll
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Newtonsoft.Json.dll
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\NLog.dll
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\BICLib.dll
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Extend.Utilities.pdb
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\bin\Debug\Newtonsoft.Json.xml
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\obj\Debug\Extend.DataAccess.csprojResolveAssemblyReference.cache
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\obj\Debug\Extend.DataAccess.csproj.CoreCompileInputs.cache
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\obj\Debug\Extend.DataAccess.dll
+H:\Workspace\GitHub\TestGit\Extend.DataAccess\obj\Debug\Extend.DataAccess.pdb

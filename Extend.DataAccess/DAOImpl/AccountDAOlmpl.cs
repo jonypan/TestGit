@@ -52,5 +52,21 @@ namespace Extend.DataAccess.DAOImpl
                 return -69;
             }
         }
+        public List<Category> GetCate(string siteName)
+        {
+            try
+            { 
+                var oCommand = new SqlCommand("[dbo].[SP_Cate_Get_List]");
+                oCommand.CommandType = CommandType.StoredProcedure;
+                oCommand.Parameters.Add(new SqlParameter("@_SiteName", siteName));
+
+                return db.GetList<Category>(oCommand);
+            }
+            catch (Exception ex)
+            {
+                NLogManager.PublishException(ex);
+                return null;
+            }
+        }
     }
 }

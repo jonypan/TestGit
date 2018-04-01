@@ -10,5 +10,6 @@ namespace Extend.DataAccess.DAO
     public interface IAccountDAO
     {
         int User_Login(string username,string password);
+        List<Category> GetCate(string siteName);
     }
 }

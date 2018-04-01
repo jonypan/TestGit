@@ -145,11 +145,13 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Code\SessionHelper.cs" />
     <Compile Include="Models\Admin\UserLogin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CategoryContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Areas\Admin\Code\AdminSession.cs" />
     <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
@@ -1179,8 +1181,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Menu.cshtml" />
     <Content Include="upload\html\extract\1476349493\index.html.tmp" />
@@ -1506,6 +1506,9 @@
     <Content Include="vi\tin-tuc\voi-nguoi-lao-dong\17\258-phat-hien-va-boi-duong-nhan-tai--tang-cuong-su-gan-ket-cua-nguoi-lao-dong.html.tmp" />
     <Content Include="vi\tin-tuc\voi-nguoi-lao-dong\17\52-chinh-sach-voi-nguoi-lao-dong-2015.html.tmp" />
     <Content Include="vi\tuyen-dung3b8a.html.tmp" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
