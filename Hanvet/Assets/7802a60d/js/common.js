@@ -469,7 +469,28 @@ $(document).ready(function(){
       }
     }
   });
-
+  //storyslider
+  $('#mainslide').owlCarousel({
+      items: 1,
+      loop: true,
+      margin: 0,
+      responsiveClass: false,
+      nav: false,
+      dots: false,
+      autoplay: true,
+      autoHeight: false,
+      autoplayTimeout: 6000,
+      autoplaySpeed: 1000,
+      autoplayHoverPause: false,
+      navText: false,
+      thumbs: true,
+      thumbsPrerendered: true,
+      onInitialize: function (event) {
+          if ($('.box-story-content .owl-carousel .box-story-item').length <= 1) {
+              this.settings.loop = false;
+          }
+      }
+  });
   //brand tab area map change
   var imgFirst = $('.branch-tabs a[data-toggle="tab"]').first();
   var imgSrcFirst = imgFirst.attr('data-src');

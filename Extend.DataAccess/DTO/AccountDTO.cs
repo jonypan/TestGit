@@ -11,7 +11,8 @@ namespace Extend.DataAccess.DTO
         public int CateId { get; set; }
         public int ParentID { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
         public string IconPath { get; set; }
         public string Url { get; set; }
         public string RewriteUrl { get; set; }
