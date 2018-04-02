@@ -42,7 +42,7 @@
                 <div class="container">
                     <div class="header">
                         <div class="logo">
-                            <a href="vi/trang-chu.html" title="Trang chủ">
+                            <a href="//@(Request.Url.Authority)" title="Trang chủ">
                                 <img src="/assets/7802a60d/custom/logo_vi.png" alt="logo" />
                             </a>
                         </div>
@@ -80,39 +80,40 @@
                                                     <div class="mega-menu-product">
                                                         <label>@cateParent.Name</label>
                                                         <p><p>@cateParent.Content</p></p>
-                                                        <a href="@cateParent.Url" title="Xem danh sách sản phẩm">Chi tiết >></a>
+                                                        <a href="@cateParent.Url" title="@cateParent.Title">Chi tiết >></a>
                                                     </div>
                                                     <div class="mega-menu-list">
                                                         <ul>
-                                                            <li class="full-list">
-                                                                @foreach (var cateSecond in cate.getCateByParent(cateParent.CateId))
-                                                                {
-                                                                    <a href="@cateSecond.Url" title="@cateSecond.Title">@cateSecond.Name</a>
-                                                                   
-                                                                    var cateThreeList = cate.getCateByParent(cateSecond.CateId);
-                                                                    if (cateThreeList != null && cateThreeList.Count > 0)
-                                                                    {
-                                                                        <ul style="float: left;width : 100%;">
-                                                                            @foreach (var cateThree in cateThreeList)
-                                                                            {
-                                                                                <li>
-                                                                                    <a href="@cateThree.Url" title="@cateThree.Title">
-                                                                                        @cateThree.Name
-                                                                                    </a>
-                                                                                </li>
-                                                                            }
-                                                                        </ul>
-                                                                    }
 
-                                                                }
-                                                            </li>
+                                                            @foreach (var cateSecond in cate.getCateByParent(cateParent.CateId))
+                                                            {
+                                                                <li class="full-list">
+                                                                    <a href="@cateSecond.Url" title="@cateSecond.Title">@cateSecond.Name</a>
+                                                                    @{
+                                                                        var cateThreeList = cate.getCateByParent(cateSecond.CateId);
+                                                                        if (cateThreeList != null && cateThreeList.Count > 0)
+                                                                        {
+                                                                            <ul>
+                                                                                @foreach (var cateThree in cateThreeList)
+                                                                                {
+                                                                                    <li>
+                                                                                        <a href="//@(Request.Url.Authority + cateThree.Url)" title="@cateThree.Title">
+                                                                                            @cateThree.Name
+                                                                                        </a>
+                                                                                    </li>
+                                                                                }
+                                                                            </ul>
+                                                                        }
+                                                                    }
+                                                                </li>
+                                                                        }
                                                         </ul>
                                                     </div>
-                                                </div><!-- mega-menu-content -->
-                                            </div><!-- mega-menu-right -->
-                                        </div><!-- mega-menu -->
+                                                </div>
+                                            </div>
+                                        </div>
                                     </li>
-                                }
+                                                                        }
 
                                 @*<li class="mega-menu-hover ">
                                         <a href="vi/cau-chuyen-traphaco.html" title="câu chuyện traphaco">câu chuyện traphaco<span class="btn-submenu fa fa-plus"></span></a>
@@ -315,7 +316,7 @@
             </div><!--header - outer-->
         </div><!--navigator-->
 
-    }
+                                                                        }
 }
 
 

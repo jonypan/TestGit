@@ -311,7 +311,7 @@ function loadPopupVideo(videoId) {
     $('#ModalView .modal-body').append('<p align="center"><img src="' + assetsUrl + '/custom/loading.gif" /></p>');
     $.ajax({
         async: false,
-        url: loadVideoUrl,
+        url: "/home/VideoGetLink",
         dataType: 'json',
         type: 'post',
         data: {
@@ -321,11 +321,11 @@ function loadPopupVideo(videoId) {
             if (json.status === true) {
                 $('#ModalView .modal-body').empty();
                 $('#ModalView .modal-body').append('<div id="fotorama" class="fotorama">');
-                $('#ModalView .modal-body').append('<iframe width="100%" height="500" src="' + json.data.source + '" frameborder="0" allowfullscreen></iframe>');
+                $('#ModalView .modal-body').append('<iframe width="100%" height="500" src="' + json.source +'" frameborder="0" allowfullscreen></iframe>');
                 $('#ModalView .modal-body').append('</div>');
             } else {
                 $('#ModalView .modal-body').empty();
-                $('#ModalView .modal-body').append('<p align="center">' + json.message + '</p>');
+                $('#ModalView .modal-body').append('<p align="center">Không thấy video</p>');
             }
         }
     });

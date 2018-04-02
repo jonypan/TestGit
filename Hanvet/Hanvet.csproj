@@ -53,12 +53,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -146,6 +155,9 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Code\SessionHelper.cs" />
+    <Compile Include="Controllers\SanphamController.cs" />
+    <Compile Include="Controllers\TintucController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Models\Admin\UserLogin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -203,6 +215,7 @@
     <Content Include="Assets\7802a60d\img\fotorama.png" />
     <Content Include="Assets\7802a60d\img\icons\icon-video.png" />
     <Content Include="Assets\7802a60d\img\icons\icon42-search.png" />
+    <Content Include="Assets\7802a60d\img\modal-close.png" />
     <Content Include="Assets\7802a60d\img\ms-step-1-active.png" />
     <Content Include="Assets\7802a60d\img\ms-step-1.png" />
     <Content Include="Assets\7802a60d\img\ms-step-2-active.png" />
@@ -1019,6 +1032,7 @@
     <Content Include="upload\timeline\thumbs\84f915626466f4307759997ed9087dd7.jpg" />
     <Content Include="upload\timeline\thumbs\aa832faa3f726f22f61bbafc130552a7.jpg" />
     <Content Include="upload\timeline\thumbs\c2eb1cdeea87c09b28fed6023a442fb5.jpg" />
+    <Content Include="upload\video\sources\fd60f900cecf2f93c4538ab4bffdcb2b.mp4" />
     <Content Include="upload\video\thumbs\50cc3be2947a09196d0801b4472bb600.jpg" />
     <Content Include="vi\14\tin-tuc.html" />
     <Content Include="vi\2\thu-vien-anh.html" />
@@ -1509,6 +1523,8 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Sanpham\Index.cshtml" />
+    <Content Include="Views\Tintuc\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
