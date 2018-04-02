@@ -820,7 +820,8 @@ select:not([multiple]) {
 }
 
     .logo img {
-        max-height: 45px;
+        margin-top: -34px;
+        max-height: 80px;
     }
 
 .expand-menutop {
@@ -6247,7 +6248,8 @@ ul[data-liffect="slideBottom"].play li {
     }
 
         .logo img {
-            max-height: 40px;
+            max-height: 60px;
+            margin-top: -12px;
         }
 
     .email-top {
