@@ -4,18 +4,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Extend.DataAccess.DTO;
+using Extend.DataAccess;
+using Extend.DataAccess.DAO;
 namespace Hanvet.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
+            int totalPage = 0;
+            IAccountDAO dbAccount = ADODAOFactory.Instance().CreateAccountDao();
+            List<Article> listArticleByOrder = dbAccount.GetListArticleByOrder(1,10,out totalPage);
+            ViewBag.listArticleByOrder = listArticleByOrder;
             return View();
         }
-        public ActionResult Detail()
-        {
-            return View();
-        }
+        
         public string VideoGetLink()
         {
             object result = new
@@ -25,5 +29,6 @@ namespace Hanvet.Controllers
             };
             return JsonConvert.SerializeObject(result);
         }
+
     }
 }

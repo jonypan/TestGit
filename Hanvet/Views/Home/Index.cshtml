@@ -1,7 +1,10 @@
-﻿@{
+﻿@using Extend.DataAccess.DTO
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@{ 
+    List<Article> listArticleByOrder = ViewBag.listArticleByOrder;
+}
 <div class="main-slider">
     <div class="video-outer">
         <div class="video-thumb-slider">
@@ -70,202 +73,60 @@
                     <div class="box-content">
                         <div class="home-news-top">
                             <div class="grid">
-                                <div class="img">
-                                    <a href="~/home/detail" title="Đại hội đồng cổ đông thường niên Traphaco năm 2018">
-                                        <img src="/upload/news/thumbs/IMG_5154.jpg" alt="Đại hội đồng cổ đông thường niên Traphaco năm 2018" />
-                                    </a>
-                                </div>
-                                <div class="g-content">
-                                    <div class="g-row">
-                                        <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                            Tin tức
-                                        </a>
-                                        <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 30, 2018</div>
-                                    </div>
-                                    <div class="g-row">
-                                        <a class="g-title" href="vi/tin-tuc/tin-tuc/1/324-dai-hoi-dong-co-dong-thuong-nien-traphaco-nam-2018.html" title="Đại hội đồng cổ đông thường niên Traphaco năm 2018">
-                                            Đại hội đồng cổ đông thường niên Traphaco năm 2018
-                                        </a>
-                                    </div>
-                                    <div class="g-row g-desc">Sáng ngày 30/3/2018, Công ty CP Traphaco đã tổ chức Đại hội đồng cổ đông thường niên năm 2018. Đại hội đã thông qua báo cáo về tình hình hoạt động sản xuất kinh doanh năm 2017 và phương hướng nhiệm vụ năm 2018, báo cáo tài chính 2017, báo cáo phương án phân phối lợi nhuận, chi trả cổ tức năm 2017...và nhiều báo cáo quan trọng khác.</div>
-                                </div>
+                                @{
+                                    if (listArticleByOrder.Count > 0)
+                                    {
+                                        <div class="img">
+                                            <a href="@listArticleByOrder[0].RwURL" title="@listArticleByOrder[0].Title">
+                                                <img src="@listArticleByOrder[0].Banner1" alt="@listArticleByOrder[0].Title" />
+                                            </a>
+                                        </div>
+                                        <div class="g-content">
+                                            <div class="g-row">
+                                                <a class="g-category" href="@listArticleByOrder[0].CateLink" title="Tin tức">
+                                                    @listArticleByOrder[0].CateName
+                                                </a>
+                                                <div class="g-time"><i class="fa fa-calendar-o"></i>@listArticleByOrder[0].PublicTime</div>
+                                            </div>
+                                            <div class="g-row">
+                                                <a class="g-title" href="@listArticleByOrder[0].RwURL" title="@listArticleByOrder[0].Title">
+                                                    @listArticleByOrder[0].Title
+                                                </a>
+                                            </div>
+                                            <div class="g-row g-desc">@listArticleByOrder[0].Summary</div>
+                                        </div>
+                                    }
+                                }
+                                
                             </div><!-- grid -->
                         </div><!-- home-news-top -->
 
                         <div class="home-news-slider news-grid">
                             <div id="hnslider" class="owl-carousel">
+                            @foreach (var article in listArticleByOrder)
+                            {
                                 <div class="grid">
                                     <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/323-nha-may-thu-4-cua-traphaco-duoc-cap-chung-nhan-gmp-who.html" title="Nhà máy thứ 4 của Traphaco được cấp chứng nhận GMP-WHO">
-                                            <img src="/upload/news/thumbs/18-3-30_GMP-WHO_traphaco_sapa.jpg" alt="Nhà máy thứ 4 của Traphaco được cấp chứng nhận GMP-WHO" />
+                                        <a href="@article.RwURL" title="@article.Title">
+                                            <img src="@article.Banner1" alt="@article.Title" />
                                         </a>
                                     </div>
                                     <div class="g-content">
                                         <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
+                                            <a class="g-category" href="@listArticleByOrder[0].CateLink" title="Tin tức">
+                                                @article.CateName
                                             </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 29, 2018</div>
+                                            <div class="g-time"><i class="fa fa-calendar-o"></i>@article.PublicTime</div>
                                         </div>
                                         <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/323-nha-may-thu-4-cua-traphaco-duoc-cap-chung-nhan-gmp-who.html" title="Nhà máy thứ 4 của Traphaco được cấp chứng nhận GMP-WHO">
-                                                Nhà máy thứ 4 của Traphaco được cấp chứng nhận GMP-WHO
+                                            <a class="g-title" href="@article.RwURL" title="@article.Title">
+                                                @article.Title
                                             </a>
                                         </div>
                                     </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/321-traphaco-thiet-lap-quan-he-voi-vien-khoa-hoc-va-cong-nghe-viet-nam-----han-quoc.html" title="Traphaco thiết lập quan hệ với Viện Khoa học và công nghệ Việt Nam – Hàn Quốc">
-                                            <img src="/upload/news/thumbs/IMG_20180323_103957.jpg" alt="Traphaco thiết lập quan hệ với Viện Khoa học và công nghệ Việt Nam – Hàn Quốc" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 23, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/321-traphaco-thiet-lap-quan-he-voi-vien-khoa-hoc-va-cong-nghe-viet-nam-----han-quoc.html" title="Traphaco thiết lập quan hệ với Viện Khoa học và công nghệ Việt Nam – Hàn Quốc">
-                                                Traphaco thiết lập quan hệ với Viện Khoa học và công nghệ Việt Nam – Hàn Quốc
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/320-top-50-doanh-nghiep-viet-co-thuong-hieu-nha-tuyen-dung-hap-dan-nam-2017.html" title="Top 50 Doanh nghiệp Việt có Thương hiệu nhà tuyển dụng hấp dẫn năm 2017">
-                                            <img src="/upload/news/thumbs/traphaco%201.jpg" alt="Top 50 Doanh nghiệp Việt có Thương hiệu nhà tuyển dụng hấp dẫn năm 2017" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 22, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/320-top-50-doanh-nghiep-viet-co-thuong-hieu-nha-tuyen-dung-hap-dan-nam-2017.html" title="Top 50 Doanh nghiệp Việt có Thương hiệu nhà tuyển dụng hấp dẫn năm 2017">
-                                                Top 50 Doanh nghiệp Việt có Thương hiệu nhà tuyển dụng hấp dẫn năm 2017
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/322-nguoi-dan-sa-pa-doi-doi-nho-cay-actiso.html" title="Người dân Sa Pa đổi đời nhờ cây Actiso">
-                                            <img src="/upload/news/thumbs/18-3-19_nguoi_dan_Sapa_doi_doi_nho_Actiso(1).jpg" alt="Người dân Sa Pa đổi đời nhờ cây Actiso" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 20, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/322-nguoi-dan-sa-pa-doi-doi-nho-cay-actiso.html" title="Người dân Sa Pa đổi đời nhờ cây Actiso">
-                                                Người dân Sa Pa đổi đời nhờ cây Actiso
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/bao-chi-voi-traphaco/14/319-den-voi-ngay-mua-cat-la-cua-nguoi-h---mong.html" title="Đến với Ngày mùa cắt lá của người H’Mong">
-                                            <img src="/upload/news/thumbs/18-3-19_ngay_hoi_cat_la_actiso(1).jpg" alt="Đến với Ngày mùa cắt lá của người H’Mong" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/bao-chi-voi-traphaco/14.html" title="Báo chí với Traphaco">
-                                                Báo chí với Traphaco
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 19, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/bao-chi-voi-traphaco/14/319-den-voi-ngay-mua-cat-la-cua-nguoi-h---mong.html" title="Đến với Ngày mùa cắt lá của người H’Mong">
-                                                Đến với Ngày mùa cắt lá của người H’Mong
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/318-boganic-cua-traphaco-lan-thu-2-duoc-vinh-danh-top-10-thuong-hieu-viet-tieu-bieu-xuat-sac.html" title="Boganic của Traphaco lần thứ 2 được vinh danh Top 10 thương hiệu Việt tiêu biểu xuất sắc">
-                                            <img src="/upload/news/thumbs/18-3-17_tra_Top_10_SP_TH_Viet_TB.jpg" alt="Boganic của Traphaco lần thứ 2 được vinh danh Top 10 thương hiệu Việt tiêu biểu xuất sắc" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 17, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/318-boganic-cua-traphaco-lan-thu-2-duoc-vinh-danh-top-10-thuong-hieu-viet-tieu-bieu-xuat-sac.html" title="Boganic của Traphaco lần thứ 2 được vinh danh Top 10 thương hiệu Việt tiêu biểu xuất sắc">
-                                                Boganic của Traphaco lần thứ 2 được vinh danh Top 10 thương hiệu Việt tiêu biểu xuất sắc
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/316-le-ky-niem-ngay-quoc-te-phu-nu-8-3.html" title="Lễ kỷ niệm ngày Quốc tế Phụ nữ 8/3">
-                                            <img src="/upload/news/thumbs/IMG_4885.jpg" alt="Lễ kỷ niệm ngày Quốc tế Phụ nữ 8/3" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Mar 09, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/316-le-ky-niem-ngay-quoc-te-phu-nu-8-3.html" title="Lễ kỷ niệm ngày Quốc tế Phụ nữ 8/3">
-                                                Lễ kỷ niệm ngày Quốc tế Phụ nữ 8/3
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/315-le-ky-niem-63-nam-ngay-thay-thuoc-viet-nam-27-2---phat-dong-tet-trong-cay-2018.html" title="Lễ kỷ niệm 63 năm ngày thầy thuốc Việt Nam 27/2 &amp; phát động Tết trồng cây 2018">
-                                            <img src="/upload/news/thumbs/18-2-27_Tet_trong_cay%20(1).jpg" alt="Lễ kỷ niệm 63 năm ngày thầy thuốc Việt Nam 27/2 &amp; phát động Tết trồng cây 2018" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Feb 27, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/315-le-ky-niem-63-nam-ngay-thay-thuoc-viet-nam-27-2---phat-dong-tet-trong-cay-2018.html" title="Lễ kỷ niệm 63 năm ngày thầy thuốc Việt Nam 27/2 &amp; phát động Tết trồng cây 2018">
-                                                Lễ kỷ niệm 63 năm ngày thầy thuốc Việt Nam 27/2 &amp; phát động Tết trồng cây 2018
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid --><div class="grid">
-                                    <div class="img">
-                                        <a href="vi/tin-tuc/tin-tuc/1/314-gap-mat-chuc-tet-can-bo-huu-tri-nhan-dip-tet-nguyen-dan-mau-tuat-2018.html" title="Gặp mặt chúc Tết cán bộ hưu trí nhân dịp Tết Nguyên đán Mậu Tuất 2018">
-                                            <img src="/upload/news/thumbs/IMG_1584.jpg" alt="Gặp mặt chúc Tết cán bộ hưu trí nhân dịp Tết Nguyên đán Mậu Tuất 2018" />
-                                        </a>
-                                    </div>
-                                    <div class="g-content">
-                                        <div class="g-row">
-                                            <a class="g-category" href="vi/tin-tuc/tin-tuc/1.html" title="Tin tức">
-                                                Tin tức
-                                            </a>
-                                            <div class="g-time"><i class="fa fa-calendar-o"></i>Feb 04, 2018</div>
-                                        </div>
-                                        <div class="g-row">
-                                            <a class="g-title" href="vi/tin-tuc/tin-tuc/1/314-gap-mat-chuc-tet-can-bo-huu-tri-nhan-dip-tet-nguyen-dan-mau-tuat-2018.html" title="Gặp mặt chúc Tết cán bộ hưu trí nhân dịp Tết Nguyên đán Mậu Tuất 2018">
-                                                Gặp mặt chúc Tết cán bộ hưu trí nhân dịp Tết Nguyên đán Mậu Tuất 2018
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- grid -->
+                                </div>
+                            }
+                               
                             </div><!-- owl-carousel -->
                         </div><!-- home-news-slider -->
                     </div><!-- box-content -->
@@ -568,104 +429,5 @@
 
 @section Script
     {
-    <script type="text/javascript">
-        var productCategories = [{ "parent_id": "0", "id": "1", "product_category_id": "1", "name": "D\u01b0\u1ee3c ph\u1ea9m", "order": "1", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "0", "id": "3", "product_category_id": "2", "name": "Th\u1ef1c ph\u1ea9m ch\u1ee9c n\u0103ng", "order": "3", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "0", "id": "5", "product_category_id": "3", "name": "M\u1ef9 ph\u1ea9m", "order": "4", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "0", "id": "7", "product_category_id": "4", "name": "S\u1ea3n ph\u1ea9m nh\u1eadp kh\u1ea9u", "order": "5", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "11", "product_category_id": "6", "name": "Acid amin - vitamin & kho\u00e1ng ch\u1ea5t", "order": "1", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "13", "product_category_id": "7", "name": "Thu\u1ed1c an th\u1ea7n", "order": "2", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "15", "product_category_id": "8", "name": "Thu\u1ed1c b\u1ed5 t\u1eeb d\u01b0\u1ee3c li\u1ec7u", "order": "3", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "17", "product_category_id": "9", "name": "Thu\u1ed1c ch\u1ed1ng vi\u00eam d\u1ea1ng men", "order": "4", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "19", "product_category_id": "10", "name": "Thu\u1ed1c d\u00f9ng cho m\u0169i-mi\u1ec7ng-h\u1ecdng", "order": "5", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "21", "product_category_id": "11", "name": "Thu\u1ed1c d\u00f9ng cho m\u1eaft", "order": "6", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "23", "product_category_id": "12", "name": "Thu\u1ed1c d\u00f9ng ngo\u00e0i da", "order": "7", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "25", "product_category_id": "13", "name": "Thu\u1ed1c gi\u1ea3m \u0111au - ch\u1ed1ng vi\u00eam", "order": "7", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "27", "product_category_id": "14", "name": "Thu\u1ed1c h\u01b0\u1edbng th\u1ea7n kinh", "order": "8", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "29", "product_category_id": "15", "name": "Thu\u1ed1c kh\u00e1ng histamin", "order": "9", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "31", "product_category_id": "16", "name": "Thu\u1ed1c kh\u00e1ng k\u00ed sinh tr\u00f9ng", "order": "10", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "33", "product_category_id": "17", "name": "Thu\u1ed1c kh\u00e1ng n\u1ea5m", "order": "11", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "35", "product_category_id": "18", "name": "Thu\u1ed1c kh\u00e1ng sinh", "order": "12", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "37", "product_category_id": "19", "name": "Thu\u1ed1c kh\u00e1ng virus", "order": "13", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "39", "product_category_id": "20", "name": "Thu\u1ed1c ph\u1ee5 khoa", "order": "14", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "41", "product_category_id": "21", "name": "Thu\u1ed1c s\u00e1t tr\u00f9ng", "order": "15", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "43", "product_category_id": "22", "name": "Thu\u1ed1c tim m\u1ea1ch - tu\u1ea7n ho\u00e0n", "order": "16", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "45", "product_category_id": "23", "name": "Thu\u1ed1c ti\u00eau h\u00f3a", "order": "17", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "47", "product_category_id": "24", "name": "Thu\u1ed1c t\u0103ng c\u01b0\u1eddng mi\u1ec5n d\u1ecbch v\u00e0 ch\u1ed1ng oxi h\u00f3a", "order": "18", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "49", "product_category_id": "25", "name": "Thu\u1ed1c x\u01b0\u01a1ng kh\u1edbp", "order": "19", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }, { "parent_id": "1", "id": "51", "product_category_id": "26", "name": "Thu\u1ed1c \u0111\u01b0\u1eddng h\u00f4 h\u1ea5p", "order": "20", "published": "1", "created_by": "1", "modified_by": "1", "lang_id": "1" }];
-    </script>
-    <script type="text/javascript">
-        // Url
-        var assetsUrl = '/assets/7802a60d/';
-        var uploadUrl = '/upload/index.html';
-        var sendContactUrl = 'home/sendContacte034.html?lang=vi';
-        var contactUrl = 'vi/lien-he.html';
-        var searchUrl = 'vi/tin-tuc.html';
-        var shareholderUrl = 'vi/tin-tuc-co-dong.html';
-        var loginUrl = 'home/ajaxLogine034.html?lang=vi';
-        var downloadUrl = 'home/logine034.html?lang=vi';
-        var historyUrl = 'vi/cau-chuyen-traphaco.html';
-        var leaderUrl = 'vi/co-cau-to-chuc.html';
-        var visionUrl = 'vi/tam-nhin-su-menh.html';
-        var prizeUrl = 'vi/danh-hieu-giai-thuong.html';
-        var productUrl = 'vi/san-pham.html';
-        var newsUrl = 'vi/tin-tuc.html';
-        var loadVideoUrl = 'home/VideoGetLink';
-        var loadPrizeUrl = 'ajax/loadPrizee034.html?lang=vi';
-        var loadStaffUrl = 'ajax/loadStaffe034.html?lang=vi';
-        var loadBranchUrl = 'ajax/loadBranche034.html?lang=vi';
-        var loadAgencyUrl = 'ajax/loadAgencye034.html?lang=vi';
-        var loadGalleryUrl = 'ajax/loadGallerye034.html?lang=vi';
-        var loadShareHolderUrl = 'ajax/loadShareHoldere034.html?lang=vi';
-
-        // Message
-        var please_type_email = 'Vui lòng nhập email !';
-        var email_invalid = 'Email không hợp lệ, vui lòng kiểm tra lại !';
-        var please_type_name = 'Vui lòng nhập tên !';
-        var please_type_phone = 'Vui lòng nhập số điện thoại !';
-        var phone_invalid = 'Số điện thoại không hợp lệ, vui lòng kiểm tra lại !';
-        var phone_range_require = 'Số điện thoại chỉ được phép từ 10 đến 15 số !';
-        var please_type_title = 'Vui lòng nhập tiêu đề';
-        var please_type_content = 'Vui lòng nhập nội dung !';
-        var please_type_keyword = 'Vui lòng nhập từ khóa !';
-        var keyword_least = 'Vui lòng nhập ít nhất 3 kí tự !';
-        var please_type_username = 'Vui lòng nhập tên đăng nhập !';
-        var please_type_password = 'Vui lòng nhập mật khẩu !';
-    </script>
-
-    <!-- Core JavaScript -->
-    <script src="/assets/7802a60d/js/jquery-1.12.4.min.js"></script>
-    <script src="/assets/7802a60d/js/bootstrap.min.js"></script>
-    <script src="/assets/7802a60d/js/owl.carousel.min.js"></script>
-    <script src="/assets/7802a60d/js/owl.carousel2.thumbs.min.js"></script>
-    <script src="/assets/7802a60d/js/fotorama.js"></script>
-    <script src="/assets/7802a60d/js/jquery.inview.js"></script>
-    <script src="/assets/7802a60d/js/jquery.countTo.js"></script>
-    <script src="/assets/7802a60d/js/swiper.min.js"></script>
-    <script src="/assets/7802a60d/js/common.js"></script>
-    <script src="/assets/7802a60d/custom/bootbox.min.js"></script>
-    <script src="/assets/7802a60d/custom/mine.js"></script>
-
-    <!-- Js only video in homepage -->
-    <script src="/assets/7802a60d/js/jquery.videobackground.js"></script>
-    @*<script language="javascript">
-        // jQuery method on
-        //    var heartslider2 = $('#heartslider');
-        //    heartslider2.on('changed.owl.carousel', function (property) {
-        //        var current = property.item.index;
-        //        var src = $(property.target).find(".ms-item-padding").eq(current).attr('datatr');
-        //        homeVideo(src);
-        //    });
-
-        //function video background
-        var homeVideo = function (source) {
-            //console.log(source);
-            $('.video-background').videobackground({
-                //videoSource: ['/video/'+ source +'.mp4', 'video/mp4'],
-                videoSource: ['/upload/banner/thumbs/098cdb05934e422132c582aa8ad20c0a.png', 'img'],
-                //[
-                //['//assets/7802a60d/video/Slide1.mp4', 'video/mp4'],
-                //['//assets/7802a60d/video/Slide2.mp4', 'video/mp4'],
-                //['//assets/7802a60d/video/traphaco-intro.mp4', 'video/mp4'],
-                //['//assets/7802a60d/video/traphaco-intro.webm', 'video/webm'],
-                //['//assets/7802a60d/video/traphaco-intro.ogv', 'video/ogg']
-                //],
-                poster: '/upload/banner/thumbs/098cdb05934e422132c582aa8ad20c0a.png',
-                loadedCallback: function () {
-                    $(this).videobackground('mute');
-                },
-                loop: true
-            });
-        };
-        $(document).ready(function () {
-            //video background init
-            homeVideo('traphaco-intro');
-        });
-        $(window).on('resize', function () {
-            //video background init
-            homeVideo('traphaco-intro');
-        });
-        //    $(document).on('click', '.scroll-down', function () {
-        //        //video background init
-        //        console.log('aaaa');
-        //        homeVideo('Slide3');
-        //    });
-    </script>*@
+    
 }
