@@ -4,6 +4,7 @@
 }
 @{ 
     List<Article> listArticleByOrder = ViewBag.listArticleByOrder;
+    List<Product> listProductByOrder = ViewBag.listProductByOrder;
 }
 <div class="main-slider">
     <div class="video-outer">
@@ -135,7 +136,7 @@
 
             <div class="col-md-4">
                 <div class="box">
-                    <div class="box-title"><div class="box-title-name">Câu chuyện Traphaco</div></div>
+                    <div class="box-title"><div class="box-title-name">Câu chuyện Hanvet</div></div>
                     <div class="box-content">
                         <div class="box-story">
                             <div class="box-story-content">
@@ -194,7 +195,6 @@
         </div><!-- row -->
     </div><!-- container -->
 </div><!-- home-news -->
-
 <div class="banner-center-outer">
     <div class="container">
         <div class="banner-center">
@@ -207,6 +207,81 @@
     </div><!-- container -->
 </div><!-- banner-center-outer -->
 
+
+@*<div class="home-news bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-title"><div class="box-title-name">Sản phẩm</div></div>
+                    <div class="box-content">
+                        <div class="home-news-top">
+                            <div class="grid">
+                                @{
+                                    if (listProductByOrder.Count > 0)
+                                    {
+                                        <div class="img">
+                                            <a href="@listProductByOrder[0].RwURL" title="@listProductByOrder[0].Title">
+                                                <img src="@listProductByOrder[0].Image" alt="@listProductByOrder[0].Title" />
+                                            </a>
+                                        </div>
+                                        <div class="g-content">
+                                            <div class="g-row">
+                                                <a class="g-category" href="@listProductByOrder[0].CateLink" title="Tin tức">
+                                                    @listProductByOrder[0].CateName
+                                                </a>
+                                                <div class="g-time"><i class="fa fa-calendar-o"></i>@listProductByOrder[0].PublicTime</div>
+                                            </div>
+                                            <div class="g-row">
+                                                <a class="g-title" href="@listProductByOrder[0].RwURL" title="@listProductByOrder[0].Title">
+                                                    @listProductByOrder[0].Title
+                                                </a>
+                                            </div>
+                                            <div class="g-row g-desc">@listProductByOrder[0].Summary</div>
+                                        </div>
+                                    }
+                                }
+
+                            </div><!-- grid -->
+                        </div><!-- home-news-top -->
+
+                        <div class="home-pd-slider news-grid">
+                            <div id="pdslider" class="owl-carousel">
+                                @foreach (var article in listProductByOrder)
+                                {
+                                    <div class="grid">
+                                        <div class="img">
+                                            <a href="@article.RwURL" title="@article.Title">
+                                                <img src="@article.Image" alt="@article.Title" />
+                                            </a>
+                                        </div>
+                                        <div class="g-content">
+                                            <div class="g-row">
+                                                <a class="g-category" href="@article.CateLink" title="Tin tức">
+                                                    @article.CateName
+                                                </a>
+                                                <div class="g-time"><i class="fa fa-calendar-o"></i>@article.PublicTime</div>
+                                            </div>
+                                            <div class="g-row">
+                                                <a class="g-title" href="@article.RwURL" title="@article.Title">
+                                                    @article.Title
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+                            </div><!-- owl-carousel -->
+                        </div><!-- home-news-slider -->
+                    </div><!-- box-content -->
+                </div><!-- box -->
+            </div><!-- col -->
+
+        </div><!-- row -->
+    </div><!-- container -->
+</div><!-- home-news -->*@
+
+
 <div class="home-product bg-white">
     <div class="container">
         <div class="row">
@@ -218,43 +293,26 @@
                     <div class="box-content">
                         <div class="home-product-slider">
                             <div id="hpslider" class="owl-carousel">
-                                <div class="home-product-item">
-                                    <div class="hpi-img"><img src="/upload/banner/thumbs/San%20pham%20Trang%20chu-1200.png" alt="Boganic" /></div>
-                                    <div class="hpi-content">
-                                        <div class="hpi-title">Boganic</div>
-                                        <div class="hpi-desc">Thuốc bổ gan Boganic là sự kết hợp của 3 vị thuốc quý: Actiso, Rau đắng đất, Bìm bìm biếc. Thuốc bổ gan Boganic giúp tăng cường chức năng gan, giải độc gan, mát gan. Đặc biệt được sản xuất hoàn toàn từ dược liệu “sạch”. </div>
-                                        <a class="btn btn-success" href="http://traphaco.vn/home/productDetail?id=19&amp;name=boganic-forte">Xem thêm<i class="icon-right icon16-double-right"></i></a>
-                                    </div>
-                                </div><!-- home-product-item -->
-                                <div class="home-product-item">
-                                    <div class="hpi-img"><img src="/upload/banner/thumbs/adcf825a26b64be2d415db3ceed32d18.png" alt="Methorphan" /></div>
-                                    <div class="hpi-content">
-                                        <div class="hpi-title">Methorphan</div>
-                                        <div class="hpi-desc">Methorphan là thuốc trị ho với ba hiệu quả tác dụng: Cắt cơn ho – long đờm – chống dị ứng. Methorphan hiệu quả trong việc làm loãng đờm nhầy dính và các chất tiết khác trong đường hô hấp, giúp long đờm dễ dàng.</div>
-                                        <a class="btn btn-success" href="http://traphaco.vn/home/productDetail?id=51&amp;name=methorphan">Xem thêm<i class="icon-right icon16-double-right"></i></a>
-                                    </div>
-                                </div><!-- home-product-item -->
-                                <div class="home-product-item">
-                                    <div class="hpi-img"><img src="/upload/banner/thumbs/a7160051e4794a0ad276de0e141b48e6.png" alt="Cebraton " /></div>
-                                    <div class="hpi-content">
-                                        <div class="hpi-title">Cebraton </div>
-                                        <div class="hpi-desc">Cebraton là thuốc bổ não cao cấp sử dụng 100% dược liệu Đinh lăng sạch. Cebraton có tác dụng điều trị thiểu năng tuần hoàn não, phòng và điều trị suy giảm trí nhớ, phòng ngừa tai biến mạch máu não.</div>
-                                        <a class="btn btn-success" href="http://traphaco.vn/home/productDetail?id=23&amp;name=cebraton">Xem thêm<i class="icon-right icon16-double-right"></i></a>
-                                    </div>
-                                </div><!-- home-product-item -->
-                                <div class="home-product-item">
-                                    <div class="hpi-img"><img src="/upload/banner/thumbs/dcb46d8bde6d96f5452d22783b5f7028.png" alt="Tottri" /></div>
-                                    <div class="hpi-content">
-                                        <div class="hpi-title">Tottri</div>
-                                        <div class="hpi-desc">Tottri là bài thuốc bổ trung ích khí gia giảm của PGS.TS Mai Tất Tố - Trường ĐH Dược Hà Nội. Tottri giúp cầm máu, co búi trĩ nhanh, giảm đau rát, chống viêm nhiễm, ngăn ngừa trĩ tái phát.</div>
-                                        <a class="btn btn-success" href="http://traphaco.vn/home/productDetail?id=57&amp;name=tottri">Xem thêm<i class="icon-right icon16-double-right"></i></a>
-                                    </div>
-                                </div><!-- home-product-item -->
+                                
+                                @{
+                                    foreach (var sanpham in listProductByOrder)
+                                    {
+                                        <div class="home-product-item">
+                                            <div class="hpi-img"><img src="@sanpham.Image" alt="@sanpham.Title" /></div>
+                                            <div class="hpi-content">
+                                                <div class="hpi-title">@sanpham.Title</div>
+                                                <div class="hpi-desc">@sanpham.Summary</div>
+                                                <a class="btn btn-success" href="@sanpham.RwURL">Xem thêm<i class="icon-right icon16-double-right"></i></a>
+                                            </div>
+                                        </div><!-- home-product-item -->
+                                    }
+                                }
+                                     
                             </div><!-- owl-carousel -->
                         </div><!-- home-product-slider -->
                         <div class="home-category">
                             <ul>
-                                <li><a href="vi/san-pham.html" title="Xem toàn bộ sản phẩm">Xem toàn bộ sản phẩm &Gt;</a></li>
+                                <li><a href="/sanpham" title="Xem toàn bộ sản phẩm">Xem toàn bộ sản phẩm &Gt;</a></li>
                             </ul>
                         </div><!-- home-category -->
                     </div><!-- box-content -->

@@ -41,7 +41,7 @@ namespace Extend.DataAccess.DTO
         {
             get
             {
-                return "/tintuc/detail/"+ArticleId;
+                return "/tintuc/detail/" + ArticleId;
             }
         }
     }
@@ -79,6 +79,49 @@ namespace Extend.DataAccess.DTO
             get
             {
                 return "/tintuc/detail/" + ArticleId;
+            }
+        }
+    }
+    public class Product
+    {
+        public int ProductID { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Image { get; set; }
+        public string ProductLink { get; set; }
+        public string CateName { get; set; }
+        public string CateLink { get; set; }
+        public DateTime PublicTime { get; set; }
+        public int ViewCount { get; set; }
+
+        public string RwURL
+        {
+            get
+            {
+                return "/sanpham/detail/" + ProductID;
+            }
+        }
+    }
+    public class ProductDetail
+    {
+        public int ProductID { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Content { get; set; }
+        public string Tags { get; set; }
+        public string Cates { get; set; }
+        public string Image { get; set; }
+        public string ProductLink { get; set; }
+        public string CateName { get; set; }
+        public string CateLink { get; set; }
+        public DateTime PublicTime { get; set; }
+        public int ViewCount { get; set; }
+
+        public string RwURL
+        {
+            get
+            {
+                return "/sanpham/detail/" + ProductID;
             }
         }
     }

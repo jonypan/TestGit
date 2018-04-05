@@ -244,6 +244,32 @@ $(document).ready(function(){
     }
   });
 
+  //hn slider
+  $('#pdslider').owlCarousel({
+      loop: true,
+      responsiveClass: true,
+      nav: false,
+      dots: true,
+      autoplay: true,
+      autoHeight: false,
+      autoplayTimeout: 10000,
+      autoplayHoverPause: false,
+      navText: false,
+      responsive: {
+          0: {
+              items: 2,
+              margin: 10
+          },
+          481: {
+              items: 2,
+              margin: 20
+          },
+          768: {
+              items: 3,
+              margin: 30
+          }
+      }
+  });
   //news other slider
   $('#newsotherslider').owlCarousel({
     loop:true,

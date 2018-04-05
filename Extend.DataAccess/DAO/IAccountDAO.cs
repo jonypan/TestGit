@@ -18,5 +18,9 @@ namespace Extend.DataAccess.DAO
         List<Article> GetArticleByTag(string TagName,int pageNum, int pageSize, out int totalPage);
 
         ArticleDetail GetArticleDetail(int id);
+
+        List<Product> GetListProductByOrder(int pageNum, int pageSize, out int totalPage);
+
+        ProductDetail GetProductDetail(int id);
     }
 }

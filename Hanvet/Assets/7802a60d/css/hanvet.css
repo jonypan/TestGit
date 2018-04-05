@@ -1,3 +1,34 @@
+﻿
+.home-pd-slider {
+    position: relative;
+    z-index: 1;
+}
+
+    .home-pd-slider .owl-carousel .owl-stage-outer {
+        margin-bottom: 25px;
+    }
+
+.home-news-slider .owl-carousel .owl-dots {
+    text-align: center;
+    line-height: 14px;
+}
+
+.home-pd-slider .owl-carousel .owl-dot {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 5px;
+    background: #adb9ae;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+    .home-pd-slider .owl-carousel .owl-dot.active {
+        background: #08993e;
+    }
+
 @import "https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=vietnamese";
 
 @import "https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=vietnamese";
@@ -493,7 +524,7 @@ select:not([multiple]) {
     .box .box-title .box-title-name {
         display: inline-block;
         vertical-align: top;
-        color: #fd0002;
+        color: #08993e;
         font-size: 20px;
         text-transform: uppercase;
         font-weight: bold;
@@ -505,7 +536,7 @@ select:not([multiple]) {
 
         .box .box-title .box-title-name:after {
             content: "";
-            background: #fd0002;
+            background: #08993e;
             height: 3px;
             width: 100px;
             position: absolute;
@@ -798,7 +829,7 @@ select:not([multiple]) {
 
 .navigator-top {
     height: 30px;
-    background: #fd0002;
+    background: #00a40f;
     text-align: right;
 }
 
@@ -820,7 +851,7 @@ select:not([multiple]) {
 }
 
     .logo img {
-        margin-top: 0px;
+        margin-top: -34px;
         max-height: 80px;
     }
 
@@ -1251,7 +1282,7 @@ select:not([multiple]) {
 }
 
     .footer .copyright {
-        background: #fd0002;
+        background: #00a40f;
         padding: 12px 0;
         color: #fff;
         font-size: 14px;
@@ -1283,7 +1314,7 @@ select:not([multiple]) {
         text-transform: uppercase;
         font-size: 18px;
         font-weight: 900;
-        color: #fd0002;
+        color: #08993e;
         margin-bottom: 15px;
     }
 
@@ -1343,7 +1374,7 @@ select:not([multiple]) {
 
     .footer .footer-label {
         text-transform: uppercase;
-        color: #fd0002;
+        color: #08993e;
         font-family: 'Utm Avo';
         font-weight: bold;
         margin-bottom: 25px;
@@ -2074,7 +2105,7 @@ select:not([multiple]) {
 
     .home-news-top .grid .g-category {
         text-decoration: none;
-        color: #fd0002;
+        color: #08993e;
         display: block;
         margin-bottom: 3px;
     }
@@ -3115,7 +3146,7 @@ select:not([multiple]) {
 
 .news-grid .grid .g-category {
     text-decoration: none;
-    color: #fd0002;
+    color: #08993e;
     display: block;
     overflow: hidden;
     white-space: nowrap;

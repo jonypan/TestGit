@@ -192,6 +192,7 @@
     <Content Include="Assets\7802a60d\css\custom.css" />
     <Content Include="Assets\7802a60d\css\font-awesome.min.css" />
     <Content Include="Assets\7802a60d\css\fotorama.css" />
+    <Content Include="Assets\7802a60d\css\hanvet.css" />
     <Content Include="Assets\7802a60d\css\owl.carousel.min.css" />
     <Content Include="Assets\7802a60d\css\style.css" />
     <Content Include="Assets\7802a60d\css\swiper.min.css" />
@@ -972,6 +973,7 @@
     <Content Include="upload\product\thumbs\efc303ba5343cfa8b23326c7b0145d78.png" />
     <Content Include="upload\product\thumbs\f2fc9883b56521ef3f711fcc4fd9112f.png" />
     <Content Include="upload\product\thumbs\f62685f125f05f9b7074b3a10ec0527d.png" />
+    <Content Include="upload\product\thumbs\tylosin-tartrate.jpg" />
     <Content Include="upload\product_images\166f6cd861bfcb2193d04637fbd85e28.jpg" />
     <Content Include="upload\product_images\539762c7c85ef5d4100d1b016bbd15d7.png" />
     <Content Include="upload\product_images\cfe8fb64703c21cd59a5773c392d7ffb.jpg" />
@@ -1532,6 +1534,7 @@
     <Content Include="Views\Sanpham\Index.cshtml" />
     <Content Include="Views\Tintuc\Index.cshtml" />
     <Content Include="Views\Tintuc\Detail.cshtml" />
+    <Content Include="Views\Sanpham\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

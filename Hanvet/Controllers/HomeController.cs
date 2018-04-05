@@ -16,7 +16,10 @@ namespace Hanvet.Controllers
             int totalPage = 0;
             IAccountDAO dbAccount = ADODAOFactory.Instance().CreateAccountDao();
             List<Article> listArticleByOrder = dbAccount.GetListArticleByOrder(1,10,out totalPage);
+            List<Product> listProductByOrder = dbAccount.GetListProductByOrder(1, 10, out totalPage);
+
             ViewBag.listArticleByOrder = listArticleByOrder;
+            ViewBag.listProductByOrder = listProductByOrder;
             return View();
         }
         
