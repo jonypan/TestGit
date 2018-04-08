@@ -52,8 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAOImpl\AccountDAOlmpl.cs" />
+    <Compile Include="DAOImpl\ArticleDAOImpl.cs" />
+    <Compile Include="DAOImpl\CommonDAOImpl.cs" />
+    <Compile Include="DAOImpl\ProductDAOImpl.cs" />
     <Compile Include="DAO\IAccountDAO.cs" />
+    <Compile Include="DAO\IArticle.cs" />
+    <Compile Include="DAO\ICommon.cs" />
+    <Compile Include="DAO\IProduct.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\CommonDTO.cs" />
     <Compile Include="Factory\AbstractDAOFactory.cs" />
     <Compile Include="Factory\ADODAOFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

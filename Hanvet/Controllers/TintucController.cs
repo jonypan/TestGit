@@ -15,10 +15,10 @@ namespace Hanvet.Controllers
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
             int totalPage = 0;
-            IAccountDAO dbAccount = ADODAOFactory.Instance().CreateAccountDao();
-            List<Article> listNewArticle = dbAccount.GetListArticleNew(1, 4, out totalPage);
-            List<Article> listArticleMostView = dbAccount.GetListArticleMostView(1, 4, out totalPage);
-            List<Article> listArticleByOrder = dbAccount.GetListArticleByOrder(1, 100, out totalPage);
+            IArticle dbArticle = ADODAOFactory.Instance().CreateArticleDao();
+            List<Article> listNewArticle = dbArticle.GetListArticleNew(1, 4, out totalPage);
+            List<Article> listArticleMostView = dbArticle.GetListArticleMostView(1, 4, out totalPage);
+            List<Article> listArticleByOrder = dbArticle.GetListArticleByOrder(1, 100, out totalPage);
 
             ViewBag.listNewArticle = listNewArticle;
             ViewBag.listArticleMostView = listArticleMostView;
@@ -28,13 +28,13 @@ namespace Hanvet.Controllers
         public ActionResult Detail(int id)
         {
             int totalPage = 0;
-            IAccountDAO dbAccount = ADODAOFactory.Instance().CreateAccountDao();
-            List<Article> listNewArticle = dbAccount.GetListArticleNew(1, 4, out totalPage);
-            List<Article> listArticleMostView = dbAccount.GetListArticleMostView(1, 4, out totalPage);
+            IArticle dbArticle = ADODAOFactory.Instance().CreateArticleDao();
+            List<Article> listNewArticle = dbArticle.GetListArticleNew(1, 4, out totalPage);
+            List<Article> listArticleMostView = dbArticle.GetListArticleMostView(1, 4, out totalPage);
 
-            ArticleDetail article = dbAccount.GetArticleDetail(id);
+            ArticleDetail article = dbArticle.GetArticleDetail(id);
             
-            List<Article> listArticleByTag = dbAccount.GetArticleByTag(article.Tags,1, 6, out totalPage);
+            List<Article> listArticleByTag = dbArticle.GetArticleByTag(article.Tags,1, 6, out totalPage);
 
             ViewBag.listNewArticle = listNewArticle;
             ViewBag.listArticleMostView = listArticleMostView;

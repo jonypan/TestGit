@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Extend.DataAccess.DAO
 {
-    public interface IAccountDAO
+    public interface IProduct
     {
-        int User_Login(string username, string password);
-        
+        List<Product> GetListProductByOrder(int pageNum, int pageSize, out int totalPage);
+
+        ProductDetail GetProductDetail(int id);
     }
 }

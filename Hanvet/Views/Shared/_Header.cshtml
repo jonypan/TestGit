@@ -6,7 +6,7 @@
     CategoryContainer cate = SessionHelper.getCateSession();
     if (cate == null)
     {
-        List<Category> list = ADODAOFactory.Instance().CreateAccountDao().GetCate(SessionHelper.getLanguageSession());
+        List<Category> list = ADODAOFactory.Instance().CreateCommonDao().GetCate(SessionHelper.getLanguageSession());
         cate = new CategoryContainer();
         cate.cateList = list;
         SessionHelper.setCateSession(cate);

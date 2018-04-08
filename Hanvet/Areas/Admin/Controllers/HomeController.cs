@@ -6,13 +6,17 @@ using System.Web.Mvc;
 
 namespace Hanvet.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController<Object>
     {
         // GET: Admin/Home
         public ActionResult Index()
         {
             return View();
         }
-       
+        public ActionResult Error()
+        {
+            ViewBag.ErrorMessage = TempData["ErrorMessage"].ToString();
+            return View();
+        }
     }
 }

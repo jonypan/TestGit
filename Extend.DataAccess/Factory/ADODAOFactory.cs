@@ -9,5 +9,20 @@ namespace Extend.DataAccess
         {
             return new AccountDAOlmpl();
         }
+
+        public override IArticle CreateArticleDao()
+        {
+            return new ArticleDAOImpl();
+        }
+
+        public override ICommon CreateCommonDao()
+        {
+            return new CommonDAOImpl();
+        }
+
+        public override IProduct CreateProductDao()
+        {
+            return new ProductDAOImpl();
+        }
     }
 }

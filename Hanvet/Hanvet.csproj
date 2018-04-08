@@ -158,6 +158,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Code\CustomMembershipProvider.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Code\SessionHelper.cs" />
@@ -617,6 +619,9 @@
     <Content Include="home\shareHolderDetailb333.html.tmp" />
     <Content Include="home\shareHolderDetaile9a5.html.tmp" />
     <Content Include="home\shareHolderDetailef59.html.tmp" />
+    <Content Include="Areas\Admin\Views\Home\Error.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LeftMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Header.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -1205,7 +1210,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Menu.cshtml" />
     <Content Include="upload\html\extract\1476349493\index.html.tmp" />
     <Content Include="upload\shareholder\attach\18-2-6_BC_HN_Q4-2017.pdf" />
     <Content Include="upload\shareholder\attach\18-3-16_BCTC_HN_kiem_toan.pdf" />
@@ -1539,6 +1543,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>

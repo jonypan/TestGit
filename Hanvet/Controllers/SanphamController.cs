@@ -15,16 +15,16 @@ namespace Hanvet.Controllers
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
             int totalPage = 0;
-            IAccountDAO dbAccount = ADODAOFactory.Instance().CreateAccountDao();
-            List<Product> listProductByOrder = dbAccount.GetListProductByOrder(1, 10000, out totalPage);
+            IProduct dbProduct = ADODAOFactory.Instance().CreateProductDao();
+            List<Product> listProductByOrder = dbProduct.GetListProductByOrder(1, 10000, out totalPage);
             return View(listProductByOrder.ToPagedList(page, pageSize));
         }
         public ActionResult Detail(int id)
         {
             int totalPage = 0;
-            IAccountDAO dbAccount = ADODAOFactory.Instance().CreateAccountDao();
+            IProduct dbProduct = ADODAOFactory.Instance().CreateProductDao();
 
-            ProductDetail product = dbAccount.GetProductDetail(id);
+            ProductDetail product = dbProduct.GetProductDetail(id);
 
             //List<Article> listArticleByTag = dbAccount.GetArticleByTag(article.Tags, 1, 6, out totalPage);
 

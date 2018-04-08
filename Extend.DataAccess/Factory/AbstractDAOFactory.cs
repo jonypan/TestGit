@@ -18,5 +18,8 @@ namespace Extend.DataAccess
         }
 
         public abstract IAccountDAO CreateAccountDao();
+        public abstract IArticle CreateArticleDao();
+        public abstract ICommon CreateCommonDao();
+        public abstract IProduct CreateProductDao();
     }
 }

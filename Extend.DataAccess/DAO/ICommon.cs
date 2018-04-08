@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Extend.DataAccess.DAO
 {
-    public interface IAccountDAO
+    public interface ICommon
     {
-        int User_Login(string username, string password);
-        
+        List<Category> GetCate(string siteName);
+        List<Menu> GetMenuByUserID(int userID);
+        List<Function> GetAllFunction();
     }
 }
