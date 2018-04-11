@@ -73,7 +73,7 @@ namespace Extend.DataAccess.DTO
         public string Image { get; set; }
         public int TinHot { get; set; }
         public int ReferenceID { get; set; }
-
+        public int OrderID { get; set; }
         public string RwURL
         {
             get

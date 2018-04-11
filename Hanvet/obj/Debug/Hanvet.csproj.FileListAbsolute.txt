@@ -102,12 +102,17 @@ H:\Workspace\GitHub\TestGit\Hanvet\bin\System.Web.Http.WebHost.dll
 H:\Workspace\GitHub\TestGit\Hanvet\bin\System.Net.Http.Formatting.xml
 H:\Workspace\GitHub\TestGit\Hanvet\bin\System.Web.Http.xml
 H:\Workspace\GitHub\TestGit\Hanvet\bin\System.Web.Http.WebHost.xml
+H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.dll
+H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.Mvc.dll
+H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.xml
+H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.Mvc.xml
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Chat\Data\badwords.txt
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\ApplicationInsights.config
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Hanvet.dll.config
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Hanvet.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Hanvet.pdb
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Antlr3.Runtime.dll
+D:\WorkSpace\VisualData\TestGit\Hanvet\bin\CKFinder.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Extend.DataAccess.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Extend.Utilities.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Microsoft.AI.Agent.Intercept.dll
@@ -137,6 +142,7 @@ D:\WorkSpace\VisualData\TestGit\Hanvet\bin\NLog.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\BICLib.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Extend.DataAccess.pdb
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Extend.Utilities.pdb
+D:\WorkSpace\VisualData\TestGit\Hanvet\bin\CKFinder.pdb
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\PagedList.xml
 D:\WorkSpace\VisualData\TestGit\Hanvet\bin\PagedList.Mvc.xml
@@ -161,7 +167,3 @@ D:\WorkSpace\VisualData\TestGit\Hanvet\obj\Debug\Hanvet.csprojResolveAssemblyRef
 D:\WorkSpace\VisualData\TestGit\Hanvet\obj\Debug\Hanvet.csproj.CoreCompileInputs.cache
 D:\WorkSpace\VisualData\TestGit\Hanvet\obj\Debug\Hanvet.dll
 D:\WorkSpace\VisualData\TestGit\Hanvet\obj\Debug\Hanvet.pdb
-H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.dll
-H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.Mvc.dll
-H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.xml
-H:\Workspace\GitHub\TestGit\Hanvet\bin\PagedList.Mvc.xml

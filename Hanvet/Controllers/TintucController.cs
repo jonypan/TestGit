@@ -18,13 +18,14 @@ namespace Hanvet.Controllers
             IArticle dbArticle = ADODAOFactory.Instance().CreateArticleDao();
             List<Article> listNewArticle = dbArticle.GetListArticleNew(1, 4, out totalPage);
             List<Article> listArticleMostView = dbArticle.GetListArticleMostView(1, 4, out totalPage);
-            List<Article> listArticleByOrder = dbArticle.GetListArticleByOrder(1, 100, out totalPage);
+            List<Article> listArticleByOrder = dbArticle.GetListArticleByCate(2, 1, 100, out totalPage);
 
             ViewBag.listNewArticle = listNewArticle;
             ViewBag.listArticleMostView = listArticleMostView;
 
             return View(listArticleByOrder.ToPagedList(page, pageSize));
         }
+        
         public ActionResult Detail(int id)
         {
             int totalPage = 0;

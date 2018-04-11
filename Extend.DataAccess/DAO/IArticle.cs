@@ -9,7 +9,7 @@ namespace Extend.DataAccess.DAO
 {
     public interface IArticle
     {
-
+        List<Article> GetListArticleByCate(int cateID,int pageNum, int pageSize, out int totalPage);
         List<Article> GetListArticleByOrder(int pageNum, int pageSize, out int totalPage);
         List<Article> GetListArticleNew(int pageNum, int pageSize, out int totalPage);
         List<Article> GetListArticleMostView(int pageNum, int pageSize, out int totalPage);
@@ -17,5 +17,7 @@ namespace Extend.DataAccess.DAO
         List<Article> GetArticleByTag(string TagName, int pageNum, int pageSize, out int totalPage);
 
         ArticleDetail GetArticleDetail(int id);
+        long Article_Edit(int ExeType, int ExeUserID, ArticleDetail article);
+        List<ArticleDetail> Article_CMS_List(int CateID, string Search, int Status, int pageNum, int pageSize, out int totalPage);
     }
 }
