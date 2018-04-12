@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<Extend.DataAccess.DTO.ArticleDetail>
+﻿@model PagedList.IPagedList<Extend.DataAccess.DTO.ProductDetail>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
@@ -13,13 +13,13 @@
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <p>
-                    <button type="button" class="btn btn-success">@Html.ActionLink("Thêm mới", "Create", "Tintuc") </button>
+                    <button type="button" class="btn btn-success">@Html.ActionLink("Thêm mới", "Create", "Sanpham") </button>
                 </p>
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr>
                             <th>Image</th>
-                            <th>ArticleID</th>
+                            <th>ProductID</th>
                             <th>Title</th>
                             <th>Image</th>
                             <th>Category</th>
@@ -30,18 +30,18 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr class="odd gradeX" id="row_@item.ArticleId">
-                                <td><img src="@item.Banner1" style="width:60px;height:40px"></td>
-                                <td>@item.ArticleId</td>
+                            <tr class="odd gradeX" id="row_@item.ProductID">
+                                <td><img src="@item.Image" style="width:60px;height:40px"></td>
+                                <td>@item.ProductID</td>
                                 <td>@item.Title</td>
-                                <td>@item.Banner1</td>
+                                <td>@item.Image</td>
                                 <td>@item.CateName</td>
                                 <td>@item.PublicTime</td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", "Tintuc", new { ID = item.ArticleId }, null) @Ajax.ActionLink("Xóa", "Delete", new { ArticleId = item.ArticleId }, new AjaxOptions
+                                    @Html.ActionLink("Edit", "Edit", "Sanpham", new { ID = item.ProductID }, null) @Ajax.ActionLink("Xóa", "Delete", new { ProductID = item.ProductID }, new AjaxOptions
                                                                                                              {
                                                                                                                  Confirm = "Bạn có muốn xóa?",
-                                                                                                                 OnComplete = "$('#row_" + item.ArticleId + "').remove()",
+                                                                                                                 OnComplete = "$('#row_" + item.ProductID + "').remove()",
                                                                                                                  HttpMethod = "Delete"
                                                                                                              })
                                 </td>

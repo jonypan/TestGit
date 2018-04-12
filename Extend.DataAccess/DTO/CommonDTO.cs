@@ -18,8 +18,13 @@ namespace Extend.DataAccess.DTO
         public string RewriteUrl { get; set; }
         public string SiteName { get; set; }
         public int Type { get; set; }
-
-
+        public string RwURL
+        {
+            get
+            {
+                return RewriteUrl;
+            }
+        }
     }
     public class Article
     {
@@ -93,6 +98,7 @@ namespace Extend.DataAccess.DTO
         public string CateLink { get; set; }
         public DateTime PublicTime { get; set; }
         public int ViewCount { get; set; }
+        public int OrderID { get; set; }
 
         public string RwURL
         {
@@ -110,12 +116,14 @@ namespace Extend.DataAccess.DTO
         public string Content { get; set; }
         public string Tags { get; set; }
         public string Cates { get; set; }
+        public int MainCateID { get; set; }
         public string Image { get; set; }
         public string ProductLink { get; set; }
         public string CateName { get; set; }
         public string CateLink { get; set; }
         public DateTime PublicTime { get; set; }
         public int ViewCount { get; set; }
+        public int OrderID { get; set; }
 
         public string RwURL
         {
@@ -147,9 +155,9 @@ namespace Extend.DataAccess.DTO
     public class Function
     {
         public int FunctionID { get; set; }
-        
+
         public string FunctionName { get; set; }
-        
+
         public string Url { get; set; }
 
         public bool? IsDisplay { get; set; }

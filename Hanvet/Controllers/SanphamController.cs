@@ -7,6 +7,8 @@ using Extend.DataAccess.DTO;
 using Extend.DataAccess;
 using Extend.DataAccess.DAO;
 using PagedList;
+using Hanvet.Code;
+
 namespace Hanvet.Controllers
 {
     public class SanphamController : Controller
@@ -14,6 +16,17 @@ namespace Hanvet.Controllers
         // GET: Sanpham
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
+            int totalPage = 0;
+            IProduct dbProduct = ADODAOFactory.Instance().CreateProductDao();
+            List<Product> listProductByOrder = dbProduct.GetListProductByOrder(1, 10000, out totalPage);
+            return View(listProductByOrder.ToPagedList(page, pageSize));
+        }
+        public ActionResult Sanpham(string Url = "", int page = 1, int pageSize = 10)
+        {
+            Category cate = SessionHelper.getCateSession().getCateByUrl(Url);
+            if (cate == null)
+                cate.CateId = -1;
+
             int totalPage = 0;
             IProduct dbProduct = ADODAOFactory.Instance().CreateProductDao();
             List<Product> listProductByOrder = dbProduct.GetListProductByOrder(1, 10000, out totalPage);

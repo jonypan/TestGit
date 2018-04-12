@@ -12,5 +12,8 @@ namespace Extend.DataAccess.DAO
         List<Product> GetListProductByOrder(int pageNum, int pageSize, out int totalPage);
 
         ProductDetail GetProductDetail(int id);
+
+        long Product_Edit(int ExeType, int ExeUserID, ProductDetail product);
+        List<ProductDetail> GetCMSListProduct(int CateID,string Search, int pageNum, int pageSize, out int totalPage);
     }
 }

@@ -166,6 +166,7 @@
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SanphamController.cs" />
     <Compile Include="Areas\Admin\Controllers\TintucController.cs" />
     <Compile Include="Code\SessionHelper.cs" />
     <Compile Include="Controllers\SanphamController.cs" />
@@ -1576,6 +1577,9 @@
     <Content Include="Assets\admin\js\plugins\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Assets\admin\js\plugins\ckfinder\userfiles\.htaccess" />
     <Content Include="Areas\Admin\Views\Tintuc\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanpham\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanpham\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Sanpham\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -2495,6 +2499,9 @@
     <Content Include="Views\Tintuc\Index.cshtml" />
     <Content Include="Views\Tintuc\Detail.cshtml" />
     <Content Include="Views\Sanpham\Detail.cshtml" />
+    <Content Include="Views\Tintuc\Tintuc.cshtml" />
+    <Content Include="Views\Tintuc\BenhVaDieuTri.cshtml" />
+    <Content Include="Views\Sanpham\Sanpham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

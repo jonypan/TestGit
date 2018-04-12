@@ -70,7 +70,7 @@
                                 @foreach (var cateParent in cate.getCateByParent(0))
                                 {
                                     <li class="mega-menu-hover ">
-                                        <a href="@cateParent.Url" title="Sản phẩm">@cateParent.Name<span class="btn-submenu fa fa-plus"></span></a>
+                                        <a href="@cateParent.RwURL" title="Sản phẩm">@cateParent.Name<span class="btn-submenu fa fa-plus"></span></a>
                                         <div class="mega-menu">
                                             <div class="mega-menu-left">
                                                 <img src="@cateParent.IconPath" alt="@cateParent.Title" />
@@ -80,7 +80,7 @@
                                                     <div class="mega-menu-product">
                                                         <label>@cateParent.Name</label>
                                                         <p><p>@cateParent.Content</p></p>
-                                                        <a href="@cateParent.Url" title="@cateParent.Title">Chi tiết >></a>
+                                                        <a href="@cateParent.RwURL" title="@cateParent.Title">Chi tiết >></a>
                                                     </div>
                                                     <div class="mega-menu-list">
                                                         <ul>
@@ -88,7 +88,7 @@
                                                             @foreach (var cateSecond in cate.getCateByParent(cateParent.CateId))
                                                             {
                                                                 <li class="full-list">
-                                                                    <a href="@cateSecond.Url" title="@cateSecond.Title">@cateSecond.Name</a>
+                                                                    <a href="@cateSecond.RwURL" title="@cateSecond.Title">@cateSecond.Name</a>
                                                                     @{
                                                                         var cateThreeList = cate.getCateByParent(cateSecond.CateId);
                                                                         if (cateThreeList != null && cateThreeList.Count > 0)
@@ -97,7 +97,7 @@
                                                                                 @foreach (var cateThree in cateThreeList)
                                                                                 {
                                                                                     <li>
-                                                                                        <a href="//@(Request.Url.Authority + cateThree.Url)" title="@cateThree.Title">
+                                                                                        <a href="@cateThree.RwURL" title="@cateThree.Title">
                                                                                             @cateThree.Name
                                                                                         </a>
                                                                                     </li>

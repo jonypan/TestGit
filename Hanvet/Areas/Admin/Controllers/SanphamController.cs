@@ -1,19 +1,18 @@
-﻿using System;
+﻿using Extend.DataAccess;
+using Extend.DataAccess.DTO;
+using Hanvet.Areas.Admin.Code;
+using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Extend.DataAccess.DTO;
-using Extend.DataAccess;
-using PagedList;
-using Hanvet.Areas.Admin.Code;
 
 namespace Hanvet.Areas.Admin.Controllers
 {
-    public class TintucController : BaseController<ArticleDetail>
+    public class SanphamController : BaseController<ProductDetail>
     {
-
-        public TintucController() : base("tintuc")
+        public SanphamController() : base("sanpham")
         {
 
         }
@@ -21,19 +20,17 @@ namespace Hanvet.Areas.Admin.Controllers
         public ActionResult Index(int page = 1, int pageSize = 10)
         {
             int totalPage = 0;
-            var listArticle = AbstractDAOFactory.Instance().CreateArticleDao().Article_CMS_List(0,"",-1,1, 1000, out totalPage);
-            return View(listArticle.ToPagedList(page,pageSize));
+            var listArticle = AbstractDAOFactory.Instance().CreateProductDao().GetCMSListProduct(-1,"", 1, 1000, out totalPage);
+            return View(listArticle.ToPagedList(page, pageSize));
         }
-        // POST: Admin/Category/Delete/5
-        
-        public override ActionResult DeleteRewrite(ArticleDetail article)
+        public override ActionResult DeleteRewrite(ProductDetail product)
         {
             try
             {
-                article.PublicTime = DateTime.Now;
+                product.PublicTime = DateTime.Now;
                 if (ModelState.IsValid)
                 {
-                    if (AbstractDAOFactory.Instance().CreateArticleDao().Article_Edit(3, SessionHelper.getAdminSession().userID, article) > 0) //category.Name,category.MetaTitle,(category.ParentID == null ? 0 : (int)category.ParentID.Value
+                    if (AbstractDAOFactory.Instance().CreateProductDao().Product_Edit(3, SessionHelper.getAdminSession().userID, product) > 0) //category.Name,category.MetaTitle,(category.ParentID == null ? 0 : (int)category.ParentID.Value
                     {
                         return RedirectToAction("Index");
                     }
@@ -59,44 +56,44 @@ namespace Hanvet.Areas.Admin.Controllers
             ViewBag.listCate = listCate;
             return View();
         }
-        public override ActionResult CreateRewrite(ArticleDetail article)
+        public override ActionResult CreateRewrite(ProductDetail product)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    article.Status = 1;
-                    if (AbstractDAOFactory.Instance().CreateArticleDao().Article_Edit(1,SessionHelper.getAdminSession().userID,article) > 0) //category.Name,category.MetaTitle,(category.ParentID == null ? 0 : (int)category.ParentID.Value
+                    if (AbstractDAOFactory.Instance().CreateProductDao().Product_Edit(1, SessionHelper.getAdminSession().userID, product) > 0) //category.Name,category.MetaTitle,(category.ParentID == null ? 0 : (int)category.ParentID.Value
                     {
                         return RedirectToAction("Index");
                     }
                     else
                     {
                         ModelState.AddModelError("", "Lỗi hệ thống!");
-                        return View(article);
+                        return View(product);
                     }
 
                 }
                 ModelState.AddModelError("", "Có lỗi!");
-                return View(article);
+                return View(product);
             }
             catch
             {
                 return View();
             }
         }
+
         // GET: Admin/Category/Edit/5
         public ActionResult Edit(int id)
         {
-            ArticleDetail article = AbstractDAOFactory.Instance().CreateArticleDao().GetArticleDetail(id);
+            ProductDetail product = AbstractDAOFactory.Instance().CreateProductDao().GetProductDetail(id);
             var listCate = AbstractDAOFactory.Instance().CreateCommonDao().GetCate("vi");
             ViewBag.listCate = listCate;
-            return View(article);
+            return View(product);
         }
 
         // POST: Admin/Category/Edit/5
 
-        public override ActionResult EditRewrite(ArticleDetail article)
+        public override ActionResult EditRewrite(ProductDetail product)
         {
             try
             {
@@ -104,19 +101,19 @@ namespace Hanvet.Areas.Admin.Controllers
                 ViewBag.listCate = listCate;
                 if (ModelState.IsValid)
                 {
-                    if (AbstractDAOFactory.Instance().CreateArticleDao().Article_Edit(2, SessionHelper.getAdminSession().userID, article) > 0) //category.Name,category.MetaTitle,(category.ParentID == null ? 0 : (int)category.ParentID.Value
+                    if (AbstractDAOFactory.Instance().CreateProductDao().Product_Edit(2, SessionHelper.getAdminSession().userID, product) > 0)
                     {
                         return RedirectToAction("Index");
                     }
                     else
                     {
                         ModelState.AddModelError("", "Lỗi hệ thống!");
-                        return View(article);
+                        return View(product);
                     }
 
                 }
                 ModelState.AddModelError("", "Có lỗi!");
-                return View(article);
+                return View(product);
             }
             catch
             {
